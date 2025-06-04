@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Forests | Group 6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#History">History</a></li>
+            <li><a href="#Impact">Impact</a></li>
+            <li><a href="#Useful_Info">Useful Info</a></li>
+            <li><a href="#Sources">Sources</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Future of Forests is<br>in Our Hands</h1>
+            <p>Now is a time to act.</p>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+    </section>
+
+    <!-- Deforestation Section -->
+    <section class="deforestation">
+        <div class="content">
+            <div class="text">
+                <h2>Deforestation</h2>
+                <h3>What is Deforestation?</h3>
+                <p>Deforestation is a matter of the destruction of forests due to various causes. It could be caused by deliberate fires, or plainly chopping down trees. Forests have been, and still are being destroyed all around the world. Learn more by clicking the link below.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+            <div class="image">
+                <img src="forest-image.jpg" alt="Deforested landscape">
+            </div>
+        </div>
+    </section>
+
+    <script>
+  const hero = document.querySelector('.hero');
+  const dots = document.querySelectorAll('.dot');
+  const nextBtn = document.querySelector('.slider-btn.next');
+  const prevBtn = document.querySelector('.slider-btn.prev');
+
+  const images = [
+    'images/forest1.jpg',
+    'images/forest2.jpg',
+    'images/forest3.jpg',
+    'images/forest4.jpg'
+  ];
+
+  let currentIndex = 0;
+
+  function updateSlider(index) {
+    currentIndex = index;
+    hero.style.backgroundImage = `url(${images[index]})`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  nextBtn.addEventListener('click', () => {
+    let newIndex = (currentIndex + 1) % images.length;
+    updateSlider(newIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    let newIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSlider(newIndex);
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const index = parseInt(dot.getAttribute('data-index'));
+      updateSlider(index);
+    });
+  });
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    let newIndex = (currentIndex + 1) % images.length;
+    updateSlider(newIndex);
+  }, 5000);
+
+  // Initial image load
+  updateSlider(currentIndex);
+</script>
+
+
+    <!-- Graph Section -->
+    <section class="graph-section">
+        <div class="content">
+            <div class="graph">
+                <img src="graph.png" alt="Classical Period Graph">
+            </div>
+            <div class="text">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <button class="learn-more">Learn More</button>
+                <div class="slider-controls">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="content">
+            <h2>The Earth needs your help</h2>
+            <p>Deforestation causes our home planet to slowly decay. To save it, we should all take part.</p>
+            <button class="learn-more">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote">
+        <blockquote>
+            "Nature can provide for the needs of people; she can't provide for the greed of people." - Mahatma Gandhi
+        </blockquote>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Impact</a></li>
+                <li><a href="#">Useful Info</a></li>
+                <li><a href="#">Sources</a></li>
+            </ul>
+        </div>
+        <div class="footer-credit">
+            <p>Designed by Sehyun Jang for Global Issues Seminar Project</p>
+        </div>
+    </footer>
+</body>
+</html> 
