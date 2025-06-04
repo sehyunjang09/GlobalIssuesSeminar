@@ -51,16 +51,6 @@ nav ul li a.active {
   background-color: black;
 }
 
-.hero-background {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    color: white;
-    background-color: black;
-    height: 600px;
-    max-height: 700px;
-}
-
 .slider-track {
   display: flex;
   width: 400%; /* 4 slides */
@@ -69,6 +59,8 @@ nav ul li a.active {
   position: absolute;
   top: 0;
   left: 0;
+  height: 600px;
+  max-height: 700px;
 }
 
 .slide {
