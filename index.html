@@ -49,55 +49,56 @@
         </div>
     </section>
 
-    <script>
-  const hero = document.querySelector('.hero');
+<script>
+  const track = document.querySelector('.slider-track');
   const dots = document.querySelectorAll('.dot');
   const nextBtn = document.querySelector('.slider-btn.next');
   const prevBtn = document.querySelector('.slider-btn.prev');
 
-  const images = [
-    'images/HeroBanner_1.jpg',
-    'images/HeroBanner_2.jpeg',
-    'images/HeroBanner_3.jpeg',
-    'images/HeroBanner_4.jpeg'
-  ];
-
   let currentIndex = 0;
+  const totalSlides = 4;
+  let autoSlideTimeout;
 
   function updateSlider(index) {
     currentIndex = index;
-    hero.style.backgroundImage = `url(${images[index+1]})`;
-
+    track.style.transform = `translateX(-${index * 100}%)`;
     dots.forEach(dot => dot.classList.remove('active'));
     dots[index].classList.add('active');
   }
 
-  nextBtn.addEventListener('click', () => {
-    let newIndex = (currentIndex + 1) % images.length;
+  function scheduleAutoSlide() {
+    clearTimeout(autoSlideTimeout); // cancel existing timer
+    autoSlideTimeout = setTimeout(() => {
+      let nextIndex = (currentIndex + 1) % totalSlides;
+      updateSlider(nextIndex);
+      scheduleAutoSlide(); // schedule next auto-slide after scroll
+    }, 5000); // 5 seconds after last input
+  }
+
+  function handleUserInput(newIndex) {
     updateSlider(newIndex);
+    scheduleAutoSlide(); // reset the timer
+  }
+
+  nextBtn.addEventListener('click', () => {
+    handleUserInput((currentIndex + 1) % totalSlides);
   });
 
   prevBtn.addEventListener('click', () => {
-    let newIndex = (currentIndex - 1 + images.length) % images.length;
-    updateSlider(newIndex);
+    handleUserInput((currentIndex - 1 + totalSlides) % totalSlides);
   });
 
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
-      const index = parseInt(dot.getAttribute('data-index'));
-      updateSlider(index);
+      handleUserInput(parseInt(dot.getAttribute('data-index')));
     });
   });
 
-  // Auto-slide every 5 seconds
-  setInterval(() => {
-    let newIndex = (currentIndex + 1) % images.length;
-    updateSlider(newIndex);
-  }, 5000);
-
-  // Initial image load
+  // Start automatic slide after initial load
   updateSlider(currentIndex);
+  scheduleAutoSlide();
 </script>
+
 
 
     <!-- Graph Section -->
