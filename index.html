@@ -1,158 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Future of Forests and Humanity | Group 6</title>
-  <link rel="stylesheet" href="styles.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Forests | Group 6</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#History">History</a></li>
+            <li><a href="#Impact">Impact</a></li>
+            <li><a href="#Useful_Info">Useful Info</a></li>
+            <li><a href="#Sources">Sources</a></li>
+        </ul>
+    </nav>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#History">History</a></li>
-      <li><a href="#Impact">Impact</a></li>
-      <li><a href="#Useful_Info">Useful Info</a></li>
-      <li><a href="#Sources">Sources</a></li>
-    </ul>
-  </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Future of Forests is<br>in Our Hands</h1>
+            <p>Now is a time to act.</p>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="slider-track">
-      <div class="slide" style="background-image: url('images/HeroBanner_1.jpg')"></div>
-      <div class="slide" style="background-image: url('images/HeroBanner_2.jpeg')"></div>
-      <div class="slide" style="background-image: url('images/HeroBanner_3.jpeg')"></div>
-      <div class="slide" style="background-image: url('images/HeroBanner_4.jpeg')"></div>
-    </div>
-
-    <div class="hero-content">
-      <h1>The Future of Forests is<br>in Our Hands</h1>
-      <p>Now is a time to act.</p>
-    </div>
-
-    <div class="slider-dots">
-      <span class="dot active" data-index="0"></span>
-      <span class="dot" data-index="1"></span>
-      <span class="dot" data-index="2"></span>
-      <span class="dot" data-index="3"></span>
-    </div>
-    <button class="slider-btn prev">&#10094;</button>
-    <button class="slider-btn next">&#10095;</button>
-  </section>
-
-  <!-- JavaScript -->
-  <script>
-    const track = document.querySelector('.slider-track');
-    const dots = document.querySelectorAll('.dot');
-    const nextBtn = document.querySelector('.slider-btn.next');
-    const prevBtn = document.querySelector('.slider-btn.prev');
-
-    let currentIndex = 0;
-    const totalSlides = 4;
-    let userInteracted = false;
-    let autoSlideTimer;
-
-    function updateSlider(index) {
-      currentIndex = index;
-      track.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[index].classList.add('active');
-    }
-
-    function scheduleAutoSlide() {
-      clearTimeout(autoSlideTimer);
-      autoSlideTimer = setTimeout(() => {
-        updateSlider((currentIndex + 1) % totalSlides);
-        scheduleAutoSlide();
-      }, 5000);
-    }
-
-    nextBtn.addEventListener('click', () => {
-      updateSlider((currentIndex + 1) % totalSlides);
-      scheduleAutoSlide();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      updateSlider((currentIndex - 1 + totalSlides) % totalSlides);
-      scheduleAutoSlide();
-    });
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        updateSlider(parseInt(dot.getAttribute('data-index')));
-        scheduleAutoSlide();
-      });
-    });
-
-    scheduleAutoSlide(); // start auto slide after page loads
-    updateSlider(currentIndex); // initial load
-  </script>
-<!-- Impact Section -->
-    <section id="impact" class="impact-section">
-        <div class="impact-content">
-            <div class="impact-text">
-                <h2 class="impact-title">Deforestation</h2>
-                <p class="impact-subtitle">What is Deforestation?</p>
-                <p class="impact-description">
-                    Deforestation is a matter on the destruction of forests due to various causes. 
-                    It could be caused by deliberate fires, or plainly chopping down trees. 
-                    Forests have been, and still are being destroyed all around the world.
-                </p>
-                <button class="learn-more-btn">Learn More</button>
+    <!-- Deforestation Section -->
+    <section class="deforestation">
+        <div class="content">
+            <div class="text">
+                <h2>Deforestation</h2>
+                <h3>What is Deforestation?</h3>
+                <p>Deforestation is a matter of the destruction of forests due to various causes. It could be caused by deliberate fires, or plainly chopping down trees. Forests have been, and still are being destroyed all around the world. Learn more by clicking the link below.</p>
+                <button class="learn-more">Learn More</button>
             </div>
-            <div class="impact-image"></div>
+            <div class="image">
+                <img src="forest-image.jpg" alt="Deforested landscape">
+            </div>
         </div>
     </section>
 
-    <!-- History Section -->
-    <section id="history" class="history-section">
-        <div class="history-content">
-            <h2 class="history-title">The History of Deforestation</h2>
-            <div class="history-main">
-                <div class="history-graph">
-                    <div class="graph-container">
-                        <div class="classical-period">
-                            <div class="period-dot"></div>
-                            <span class="period-text">Classical<br>Period</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="history-text">
-                    <p class="history-subtitle">Still a long way to go</p>
-                    <p class="history-description">
-                        Wood has been one of the most versatile materials. Deforestation continued 
-                        for a long time to fuel our society. It also happened to acquire more land 
-                        for various uses. People have, and still are, burning large portions of 
-                        forests for it.
-                    </p>
-                    <button class="learn-more-btn">Learn More</button>
+    <script>
+  const hero = document.querySelector('.hero');
+  const dots = document.querySelectorAll('.dot');
+  const nextBtn = document.querySelector('.slider-btn.next');
+  const prevBtn = document.querySelector('.slider-btn.prev');
+
+  const images = [
+    'images/forest1.jpg',
+    'images/forest2.jpg',
+    'images/forest3.jpg',
+    'images/forest4.jpg'
+  ];
+
+  let currentIndex = 0;
+
+  function updateSlider(index) {
+    currentIndex = index;
+    hero.style.backgroundImage = `url(${images[index]})`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  nextBtn.addEventListener('click', () => {
+    let newIndex = (currentIndex + 1) % images.length;
+    updateSlider(newIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    let newIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSlider(newIndex);
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const index = parseInt(dot.getAttribute('data-index'));
+      updateSlider(index);
+    });
+  });
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    let newIndex = (currentIndex + 1) % images.length;
+    updateSlider(newIndex);
+  }, 5000);
+
+  // Initial image load
+  updateSlider(currentIndex);
+</script>
+
+
+    <!-- Graph Section -->
+    <section class="graph-section">
+        <div class="content">
+            <div class="graph">
+                <img src="graph.png" alt="Classical Period Graph">
+            </div>
+            <div class="text">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <button class="learn-more">Learn More</button>
+                <div class="slider-controls">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Useful Info Section -->
-    <section id="useful-info" class="useful-info-section">
-        <div class="info-content">
-            <h2 class="info-title">The Earth needs your help</h2>
-            <p class="info-subtitle">
-                Deforestation causes our home planet to slowly decay. To save it, we should all take part.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="content">
+            <h2>The Earth needs your help</h2>
+            <p>Deforestation causes our home planet to slowly decay. To save it, we should all take part.</p>
+            <button class="learn-more">Learn More</button>
         </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote">
+        <blockquote>
+            "Nature can provide for the needs of people; she can't provide for the greed of people." - Mahatma Gandhi
+        </blockquote>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <nav class="footer-nav">
-                <span>Home   History   Impact   Useful Info   Sources</span>
-            </nav>
-            <p class="footer-credit">Designed by Sehyun Jang for Global Issues Seminar Project</p>
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Impact</a></li>
+                <li><a href="#">Useful Info</a></li>
+                <li><a href="#">Sources</a></li>
+            </ul>
+        </div>
+        <div class="footer-credit">
+            <p>Designed by Sehyun Jang for Global Issues Seminar Project</p>
         </div>
     </footer>
 </body>
-</html>
+</html> 
