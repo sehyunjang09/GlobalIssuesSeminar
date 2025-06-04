@@ -59,14 +59,17 @@
         </div>
     </section>
 
-    <script>const track = document.querySelector('.slider-track');
+<script>
+const track = document.querySelector('.slider-track');
 const dots = document.querySelectorAll('.dot');
 const nextBtn = document.querySelector('.slider-btn.next');
 const prevBtn = document.querySelector('.slider-btn.prev');
 
 let currentIndex = 0;
 const totalSlides = 4;
+let autoSlideTimeout;
 
+// Main function to update the slider
 function updateSlider(index) {
   currentIndex = index;
   track.style.transform = `translateX(-${index * 100}%)`;
@@ -75,32 +78,40 @@ function updateSlider(index) {
   dots[index].classList.add('active');
 }
 
+// Resets and starts a new 5s auto-slide timer
+function resetAutoSlideTimer() {
+  clearTimeout(autoSlideTimeout);
+  autoSlideTimeout = setTimeout(() => {
+    let newIndex = (currentIndex + 1) % totalSlides;
+    updateSlider(newIndex);
+    resetAutoSlideTimer(); // restart the timer after auto-slide
+  }, 5000);
+}
+
+// User interactions
 nextBtn.addEventListener('click', () => {
   let newIndex = (currentIndex + 1) % totalSlides;
   updateSlider(newIndex);
+  resetAutoSlideTimer();
 });
 
 prevBtn.addEventListener('click', () => {
   let newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
   updateSlider(newIndex);
+  resetAutoSlideTimer();
 });
 
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
     const index = parseInt(dot.getAttribute('data-index'));
     updateSlider(index);
+    resetAutoSlideTimer();
   });
 });
 
-// Auto-slide
-setInterval(() => {
-  let newIndex = (currentIndex + 1) % totalSlides;
-  updateSlider(newIndex);
-}, 5000);
-
 // Initial load
 updateSlider(currentIndex);
-
+resetAutoSlideTimer(); // Start the initial auto-slide timer
 </script>
 
 
