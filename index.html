@@ -72,7 +72,7 @@ let autoSlideTimeout;
 // Main function to update the slider
 function updateSlider(index) {
   currentIndex = index;
-  track.style.transform = `translateX(((400-${index * 100})%400 %))`;
+  track.style.transform = `translateX((400-${index * 100})%)`;
 
   dots.forEach(dot => dot.classList.remove('active'));
   dots[index].classList.add('active');
