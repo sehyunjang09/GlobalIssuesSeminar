@@ -38,16 +38,19 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    position: relative;
-    height: 80vh;
-    background-image: url('forest-background.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
+
 
 .hero-content {
     padding: 2rem;
