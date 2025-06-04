@@ -49,6 +49,7 @@ nav ul li a.active {
   height: 100vh;
   overflow: hidden;
   color: white;
+    background-color: black;
 }
 
 .slider-track {
@@ -59,7 +60,6 @@ nav ul li a.active {
   position: absolute;
   top: 0;
   left: 0;
-}
 }
 
 .slide {
