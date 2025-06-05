@@ -59,8 +59,7 @@
           Deforestation is a matter of the destruction of forests due to
           various causes. It could be caused by deliberate fires, or plainly
           chopping down trees. Forests have been, and still are being
-          destroyed all around the world. Learn more by clicking the link
-          below.
+          destroyed all around the world.
         </p>
         <button class="learn-more">Learn More</button>
       </div>
@@ -87,7 +86,7 @@
     function updateSlider(index) {
       currentIndex = index;
       // shift the track left by (index × 100%) so that the “index”th slide is visible
-      track.style.transform = `translateX(-${index * 100}%)`;
+      track.style.transform = `translateX(-${(index-1) * 100}%)`;
 
       dots.forEach(dot => dot.classList.remove('active'));
       dots[index].classList.add('active');
