@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Future of Forests and Humans | Group 6</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Impact">Impact</a></li>
+      <li><a href="#Useful_Info">Useful Info</a></li>
+      <li><a href="#Sources">Sources</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image" style="background-image: url('images/HeroBanner_1.jpg');"></div>
+    <div class="hero-content">
+      <h1>The Future of Forests is<br>in Our Hands</h1>
+      <p>Now is a time to act.</p>
+    </div>
+  </section>
+
+  <!-- Deforestation Section -->
+  <section class="deforestation">
+    <div class="content">
+      <div class="text">
+        <h2>Deforestation</h2>
+        <h3>What is Deforestation?</h3>
+        <p>Deforestation is a matter of the destruction of forests due to various causes. It could be caused by deliberate fires, or plainly chopping down trees. Forests have been, and still are being, destroyed all around the world.</p>
+        <button class="learn-more">Learn More</button>
+      </div>
+      <div class="image">
+        <img src="homepage-deforestation.jpg" alt="Deforested landscape">
+      </div>
+    </div>
+  </section>
+
+  <!-- Graph Section -->
+  <section class="graph-section">
+    <div class="content">
+      <div class="graph">
+        <img src="graph.png" alt="Forest area by year">
+      </div>
+      <div class="text">
+        <h2>The History of Deforestation</h2>
+        <p>So what has happened and what is happening?</p>
+        <p>Wood has been one of the most versatile materials. Deforestation continued for a long time to fuel our society. It also happened to acquire more land for various uses. People have, and still are, burning large portions of forests for it.</p>
+        <button class="learn-more">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta">
+    <div class="content">
+      <h2>The Earth needs your help</h2>
+      <p>Deforestation causes our home planet to slowly decay. To save it, we should all take part.</p>
+      <button class="learn-more">Learn More</button>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote">
+    <blockquote>
+      "Nature can provide for the needs of people; she can't provide for the greed of people." - Mahatma Gandhi
+    </blockquote>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Impact</a></li>
+        <li><a href="#">Useful Info</a></li>
+        <li><a href="#">Sources</a></li>
+      </ul>
+    </div>
+    <div class="footer-credit">
+      <p>Designed by Sehyun Jang for Global Issues Seminar Project</p>
+    </div>
+  </footer>
+
+  <!-- Background Image Script -->
+  <script>
+    const heroImage = document.querySelector('.hero-image');
+    const images = [
+      'images/HeroBanner_1.jpg',
+      'images/HeroBanner_2.jpeg',
+      'images/HeroBanner_3.jpeg',
+      'images/HeroBanner_4.jpeg'
+    ];
+    let currentIndex = 0;
+
+    function changeImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      heroImage.style.backgroundImage = `url('${images[currentIndex]}')`;
+    }
+
+    setInterval(changeImage, 5000);
+  </script>
+</body>
+</html>
