@@ -119,7 +119,7 @@ nav ul li a.active {
 .slider-btn {
     position: absolute;
     /* ↓ Move top from 50% to 40% to pull arrows out of the literal vertical middle */
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.3);
     border: none;
