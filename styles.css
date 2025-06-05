@@ -37,36 +37,39 @@ nav ul li a.active {
 }
 
 /* Hero Section */
+
 .hero {
   position: relative;
-  /* Use 60vh so each slide doesn’t over-stretch. */
   height: 60vh;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 
-/* 1) The “track” that holds 4 slides side by side */
-.slider-track {
-  display: flex;
-  width: 400%;         /* 4 slides × 100% each */
-  height: 100%;
+.hero-image {
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 1;
+  transition: background-image 1s ease-in-out;
 }
 
-/* 2) Each slide takes up 100% of the .hero width/height */
-.slide {
-  flex: 0 0 100%;
-  height: 100%;
-  background-size: contain;    /* show the entire image without cropped zoom */
-  background-repeat: no-repeat;
-  background-position: center;
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  text-align: left;
 }
+
 
 /* Overlayed hero text */
 .hero-content {
