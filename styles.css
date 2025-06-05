@@ -156,7 +156,7 @@ nav ul li a.active {
 
 .deforestation .text {
   flex: 1;
-  text-align: center;
+  text-align: left; 
 }
 
 .deforestation h2 {
@@ -199,7 +199,7 @@ nav ul li a.active {
 
 .graph-section .text {
   flex: 1;
-  text-align: center;
+  text-align: left; 
 }
 
 .graph-section img {
