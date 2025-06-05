@@ -50,8 +50,6 @@ nav ul li a.active {
     justify-content: center;
 }
 
-/* If you’re using a slider inside .hero (instead of a single bg-image),
-   you would add something like:
    
    .slider-track {
      display: flex;
@@ -70,7 +68,6 @@ nav ul li a.active {
      background-repeat: no-repeat;
      background-position: center;
    }
-*/
 
 /* Text inside the hero */
 .hero-content {
