@@ -207,6 +207,17 @@ nav ul li a.active {
   width: 100%;
 }
 
+.graph-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.graph-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
 /* CTA Section */
 .cta {
   padding: 6rem 2rem;
