@@ -214,6 +214,7 @@ nav ul li a.active {
   background-position: center;
   color: white;
   text-align: center;
+  opacity: 0.5;
 }
 
 .cta .content {
