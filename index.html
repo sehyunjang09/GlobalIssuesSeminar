@@ -84,9 +84,9 @@
     let autoSlideTimer = null;
 
     function updateSlider(index) {
-      currentIndex = index;
       // shift the track left by (index × 100%) so that the “index”th slide is visible
-      track.style.transform = `translateX(-${(index) * 100}%)`;
+      track.style.transform = `translateX(-${(index-currentIndex) * 100}%)`;
+      currentIndex = index;
 
       dots.forEach(dot => dot.classList.remove('active'));
       dots[index].classList.add('active');
