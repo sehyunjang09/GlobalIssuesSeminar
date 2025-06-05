@@ -59,7 +59,7 @@ nav ul li a.active {
   background-size: cover;
   background-position: center;
   z-index: 0;
-  opacity: 1;
+  opacity: 0.5;
   transition: background-image 1s ease-in-out;
 }
 
