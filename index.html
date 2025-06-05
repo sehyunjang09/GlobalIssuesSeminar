@@ -86,7 +86,7 @@
     function updateSlider(index) {
       currentIndex = index;
       // shift the track left by (index × 100%) so that the “index”th slide is visible
-      track.style.transform = `translateX((-${(index) * 25}-75)%)`;
+      track.style.transform = `translateX(-${(index) * 50}%)`;
 
       dots.forEach(dot => dot.classList.remove('active'));
       dots[index].classList.add('active');
